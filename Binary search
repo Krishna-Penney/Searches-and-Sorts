@@ -1,0 +1,31 @@
+file = open("sortedData.txt","r")
+list = file.read().splitlines()
+
+#print("Data list:", list[0])
+Found= False
+low = 0
+high = len(list) - 1
+#-1 as index starts at 0
+number = input("Enter number to be found:\n")
+
+while Found==False and low <= high:
+  mid = (low+high)//2
+  if list[mid] == number:
+    Found = True
+  else:
+    if int(number) > int(list[mid]):
+      low = mid + 1
+      #+1 to not recheck mid
+    else:
+      high = mid - 1
+      #-1 to not recheck mid
+      #print("Low:", low)  
+      #print("High:", high)  
+index = list.index(number)
+
+
+if Found:
+  print("Yay! You're number is in the list at position", index, ". Congrats.")
+else:
+  print("No! You're number is not in the list.")
+  
