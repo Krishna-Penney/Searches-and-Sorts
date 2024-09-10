@@ -1,0 +1,19 @@
+f=open("unSortedData.txt", "r")
+contents = f.read().splitlines()
+f.close()
+print(contents)
+searchItem = input("What would you like to search for\n")
+found = False
+pos = 0
+while not found and pos < len(contents):
+  if contents [pos]== searchItem:
+    found = True
+  #if the else was removed this means the pos will stay 
+  #the same and the num may never be found
+  else:
+    pos+=1
+if found:
+  print("We found the item", searchItem,"at position", pos)
+else:
+  print("The item", searchItem,"was not present in the list")
+  
