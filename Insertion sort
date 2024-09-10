@@ -1,0 +1,22 @@
+file = open("unsorted.txt","r")
+data = file.read().splitlines()
+
+print("This is the unsorted list:\n")
+print(data)
+
+for i in range(1, len(data)):
+  #store current number to be compared
+  Current=data[i]
+  #moves elements that are greater than the current number
+  #to one ahead of the current pos
+  j = i - 1
+  while j >= 0 and int(Current) < int(data[j]):
+    #remember to convert to int as a file is a string
+      data[j + 1] = data[j]
+      j=j - 1
+  #inserts current number into the corresct pos
+  data[j + 1] = Current
+
+print("This is the sorted list:\n")
+print(data)
+
