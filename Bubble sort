@@ -1,0 +1,28 @@
+file = open("sortedData.txt","r")
+data = file.read().splitlines()
+
+
+print("This is the unsorted list:\n")
+print(data)
+
+swaps = True
+end = len(data)-1
+#to stop bubbling the top number as it is already sorted
+while swaps:
+  swaps=False
+  for item in range(end):
+#turn data[item] and data[item+1] into an 
+#integer as the file is a str
+    if int(data[item]) > int(data[item+1]):
+      swaps = True
+      temp = data[item]
+      data[item] = data[item+1]
+      data[item+1] = temp
+  end = end - 1
+
+print(data)
+  
+    
+    
+    
+  
